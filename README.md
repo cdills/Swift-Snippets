@@ -1,14 +1,14 @@
 
 # Swift Snippets
 
-## Get device height & width
+### Get device height & width
 
     let screenRect = UIScreen.main.bounds
     let screenHeight = screenRect.size.height
     let screenWidth = screenRect.size.width
 
 
-## Reposition admob frame to bottom of any device
+### Reposition admob frame to bottom of any device
 
     func adViewDidReceiveAd(view: GADBannerView) {
         print("adViewDidReceiveAd:\(view)");
@@ -32,7 +32,7 @@
     }
 
 
-## UI Alert with Text Field Template & numberpad
+### UI Alert with Text Field Template & numberpad
 
     Import UIkit
        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
@@ -48,14 +48,14 @@
 
             self.present(alert, animated: true, completion: nil)
 
-## Create JSON object with “data” type input
+### Create JSON object with “data” type input
 
     if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     print(json)
 
 
 
-## Pull to refresh tableview with async queue
+### Pull to refresh tableview with async queue
 
     func reloader() {
             DispatchQueue.main.async {
