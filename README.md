@@ -10,20 +10,30 @@
 
 ### Reposition admob frame to bottom of any device
 
+    var bannerView: GADBannerView!
+    var bannerDisplayed = false
+    let screenRect = UIScreen.main.bounds
+
+	viewdidload(){
+   		adViewDidReceiveAd(view: bannerView)
+	}
+
     func adViewDidReceiveAd(view: GADBannerView) {
         print("adViewDidReceiveAd:\(view)");
         bannerDisplayed = true
         relayoutViews()
     }
-
+    
     func relayoutViews() {
         if (bannerDisplayed) {
-
+            let screenHeight = screenRect.size.height
             var bannerFrame = bannerView!.frame
             bannerFrame.origin.x = 0
             bannerFrame.origin.y = screenHeight - bannerFrame.size.height
-
             bannerView!.frame = bannerFrame
+        }
+    }
+
 
 ### Force hide status bar. Place in view controller. Use with plist setting
 
